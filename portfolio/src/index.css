@@ -24,6 +24,11 @@ body {
   background: #00d9bc;
 }
 
+.fade-out-bottom {
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
 @theme {
   /* Font Family */
   --font-mono: "Fira Code", monospace;

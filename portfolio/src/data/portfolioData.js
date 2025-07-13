@@ -10,7 +10,7 @@ export const portfolioData = {
     title: "is a Software Engineering student and an aspiring developer",
     subtitle:
       "He’s building his foundation in web, AI, and system design while exploring creative and functional coding",
-    heroImage: "https://placehold.co/450x450/1A202C/00F5D4?text=Abid",
+    heroImage:"Abid.png"
   },
   about: {
     bio: [
