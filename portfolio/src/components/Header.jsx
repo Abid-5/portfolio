@@ -74,7 +74,7 @@ const Header = ({ activeSection, navItems, scrollToSection }) => {
       </div>
       {isMenuOpen && (
         <div className="md:hidden pb-4 px-2 sm:px-3 glassmorphism">
-          <nav className="flex flex-col space-y-2 bg-background/50 rounded-lg p-2">
+          <nav className="flex flex-col space-y-2 bg-background/90 rounded-lg p-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
