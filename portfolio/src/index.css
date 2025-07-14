@@ -29,6 +29,13 @@ body {
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
+.glassmorphism {
+  background: rgba(26, 32, 44, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(45, 55, 72, 0.5);
+}
+
 @theme {
   /* Font Family */
   --font-mono: "Fira Code", monospace;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Header = ({ activeSection, navItems, scrollToSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,10 +11,20 @@ const Header = ({ activeSection, navItems, scrollToSection }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
+
   return (
-    <header
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glassmorphism" : "bg-transparent"
+        scrolled || isMenuOpen ? "glassmorphism" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +54,7 @@ const Header = ({ activeSection, navItems, scrollToSection }) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-secondary hover:text-white focus:outline-none"
+              className="text-secondary hover:text-white focus:outline-none z-50"
               aria-label="Toggle menu"
             >
               <svg
@@ -72,30 +83,33 @@ const Header = ({ activeSection, navItems, scrollToSection }) => {
           </div>
         </div>
       </div>
-      {isMenuOpen && (
-        <div className="md:hidden pb-4 px-2 sm:px-3 glassmorphism">
-          <nav className="flex flex-col space-y-2 bg-background/90 rounded-lg p-2">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  scrollToSection(item.id);
-                  setIsMenuOpen(false);
-                }}
-                className={`block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 ${
-                  activeSection === item.id
-                    ? "text-white bg-background-light"
-                    : "text-secondary hover:text-white hover:bg-background-light"
-                }`}
-              >
-                <span className="text-primary">#</span>
-                {item.label.substring(1)}
-              </button>
-            ))}
-          </nav>
-        </div>
-      )}
-    </header>
+      <div
+        className={`md:hidden fixed inset-0 bg-background transition-opacity duration-300 ${
+          isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      >
+        <nav className="flex flex-col items-center justify-center h-full space-y-8">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                scrollToSection(item.id);
+                setIsMenuOpen(false);
+              }}
+              className={`text-3xl font-medium transition-colors duration-200 ${
+                activeSection === item.id
+                  ? "text-primary"
+                  : "text-secondary hover:text-primary"
+              }`}
+            >
+              <span className="text-primary">#</span>
+              {item.label.substring(1)}
+            </button>
+          ))}
+        </nav>
+      </div>
+    </motion.header>
   );
 };
 export default Header;

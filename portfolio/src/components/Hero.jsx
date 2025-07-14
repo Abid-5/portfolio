@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Hero = ({ data, scrollToSection }) => {
   return (
@@ -7,8 +8,12 @@ const Hero = ({ data, scrollToSection }) => {
       className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-        {/* ... Text content ... */}
-        <div className="text-center md:text-left">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-center md:text-left"
+        >
           <h1 className="text-3xl sm:text-4xl font-semibold mb-4 text-text-main">
             {data.name} is a{" "}
             <span className="text-primary">Software Engineering Student</span>{" "}
@@ -24,18 +29,24 @@ const Hero = ({ data, scrollToSection }) => {
           >
             Contact me !!
           </button>
-        </div>
-
-        {/* Image Section */}
-        <div className="relative flex justify-center items-center group animate-float mt-12 md:mt-0">
-          <div className="absolute w-70 h-70 md:w-[28rem] md:h-[28rem] rounded-3xl bg-primary/10 shadow-primary animate-pulse rotate-45 "></div>
-
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+          className="relative flex justify-center items-center group mt-12 md:mt-0"
+        >
+          <motion.div
+            animate={{ y: [-10, 10, -10] }}
+            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+            className="absolute w-80 h-80 md:w-[28rem] md:h-[28rem] rounded-3xl bg-primary/10 shadow-primary rotate-45 "
+          ></motion.div>
           <img
-            src={"Abid.png"}
+            src={data.heroImage}
             alt={data.name}
-            className="relative z-10 h-[320px] md:h-[420px] w-auto fade-out-bottom"
+            className="relative z-10 h-[360px] md:h-[420px] w-auto fade-out-bottom"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
