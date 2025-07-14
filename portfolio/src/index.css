@@ -2,7 +2,7 @@
 
 body {
   font-family: "Fira Code", monospace;
-  color: #e2e8f0; /* text-main */
+  color: #e2e8f0;
   background: linear-gradient(-45deg, #1a202c, #2d3748, #1a202c);
   background-size: 400% 400%;
   animation: gradient-pan 15s ease infinite;
@@ -30,8 +30,8 @@ body {
 }
 
 .glassmorphism {
-  background: rgba(26, 32, 44, 0.6);
-  backdrop-filter: blur(12px);
+  background: rgba(26, 32, 44, 0.75);
+  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(45, 55, 72, 0.5);
 }

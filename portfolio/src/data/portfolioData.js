@@ -51,7 +51,7 @@ export const portfolioData = {
       description:
         "A full-stack MERN task manager integrated with an Islamic productivity suite, featuring AI subtask/image analysis and Google OAuth.",
       tech: ["React", "Node.js", "MongoDB", "JWT", "Groq"],
-      link: "https://github.com/Abid-5/Task-Tree-Client",
+      link: "https://github.com/Abid-5/Task-Tree",
     },
     {
       id: 2,
@@ -59,7 +59,7 @@ export const portfolioData = {
       description:
         "A Java-based game suite with 5 cognitive challenges and a rule-based engine to recommend games based on user inputs.",
       tech: ["Java", "OOP", "File I/O"],
-      link: "https://github.com/Abid-5/Cognitive-Training-Game-Suite",
+      link: "https://github.com/irfanAbir1231/Spl1",
     },
     {
       id: 3,
@@ -67,7 +67,7 @@ export const portfolioData = {
       description:
         "A full-stack hall management system with secure login, complaint submission, and a suggestion system with upvoting.",
       tech: ["Node.js", "PostgreSQL", "EJS"],
-      link: "https://github.com/Abid-5/HallHaven",
+      link: "https://github.com/irfanAbir1231/SPL2",
     },
     {
       id: 4,
@@ -75,7 +75,7 @@ export const portfolioData = {
       description:
         "Refactored a monolithic Java Swing game into a modular OOP structure using SRP and MVC principles.",
       tech: ["Java", "Swing", "AWT", "OOP"],
-      link: "https://github.com/Abid-5/DX-Ball",
+      link: "https://github.com/Abid-5/DX-Ball-Game",
     },
     {
       id: 5,
@@ -83,7 +83,7 @@ export const portfolioData = {
       description:
         "A full-stack app for student collaboration with secure multi-provider auth and file upload via GridFS.",
       tech: ["Node.js", "MongoDB", "GridFS"],
-      link: "https://github.com/Abid-5/EduShare",
+      link: "https://github.com/Abid-5AS/Edu-Share",
     },
   ],
   about: {
@@ -157,6 +157,7 @@ export const portfolioData = {
         Icon: FaLinkedin,
       },
       github: { link: "https://github.com/Abid-5", Icon: FaGithub },
+      github_iut: { link: "https://github.com/Abid-5AS", Icon: FaGithub },
     },
   },
 };
