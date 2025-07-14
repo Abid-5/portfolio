@@ -6,7 +6,7 @@ const Education = ({ data }) => {
   return (
     <div className="max-w-4xl mx-auto">
       <h2 className="text-3xl font-semibold text-text-main mb-12">
-        <span className="text-primary">#</span>education
+        <span className="text-primary">#</span>Career & Education Timeline
       </h2>
       <div className="relative border-l-2 border-primary/30 ml-4">
         {data.map((edu, index) => (

@@ -10,6 +10,8 @@ import {
   FaLinkedin,
   FaGithub,
   FaCuttlefish,
+  FaCode,
+  FaWrench,
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -21,6 +23,7 @@ import {
   SiUnrealengine,
   SiAdobeillustrator,
   SiAdobephotoshop,
+  SiCodeforces,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb";
@@ -138,6 +141,22 @@ export const portfolioData = {
       details: "CGPA: 3.01 / 4.00",
     },
     {
+      institution: "Codeforces",
+      degree: "Problem Solving & Competitive Programming",
+      years: "Ongoing",
+      details:
+        "Actively developing algorithmic problem-solving skills by tackling challenges on Codeforces, having successfully solved over 192 problems.",
+      Icon: FaCode,
+    },
+    {
+      institution: "Personal Hobby",
+      degree: "Beta Testing & System Customization",
+      years: "Ongoing",
+      details:
+        "Passionate about exploring new technologies by participating in macOS and Android beta programs. Experienced in flashing custom ROMs, identifying bugs, and providing developer feedback.",
+      Icon: FaWrench,
+    },
+    {
       institution: "Sirajganj Government College",
       degree: "Higher Secondary Certificate (HSC)",
       years: "2021",
@@ -158,6 +177,10 @@ export const portfolioData = {
       },
       github: { link: "https://github.com/Abid-5", Icon: FaGithub },
       github_iut: { link: "https://github.com/Abid-5AS", Icon: FaGithub },
+      codeforces: {
+        link: "https://codeforces.com/profile/Abid_5",
+        Icon: SiCodeforces,
+      },
     },
   },
 };
